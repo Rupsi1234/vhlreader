@@ -33,16 +33,7 @@ async function main() {
 
             //logData = updateLogDataObj(funcReportDir)
 
-            if (logData.skipAssertion != true) {
-                reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/index.html';
-                mailObj1 = await createMail(logData, reportUrl, "Functional Automation Test Run");
-            }
-
-            if (fs.existsSync(visReportDir)) {
-                reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/visual/index.html';
-                logData = updateLogDataObj(visReportDir);
-                mailObj2 = await createMail(logData, reportUrl, "Visual Regression Test Run");
-            }
+        
 
             if (mailObj2 == undefined) {
                 mailOutput = mailObj1.mailOutput + mailObj1.lastLine;
@@ -53,11 +44,11 @@ async function main() {
             } else {
                 mailOutput = mailObj1.mailOutput + '<!DOCTYPE html><html><body><br></body></html>' + mailObj2.mailOutput + mailObj1.lastLine;
                 if (mailObj1.status == "passed" && mailObj2.status == "passed")
-                    mailSubject = "✔️ " + argv.appType + " | " + argv.testEnv.toUpperCase() + " | " + folder[0] + " | PASSED";
+                    mailSubject = "✔️  | PASSED";
                 else if (mailObj1.status == "error" || mailObj2.status == "error")
-                    mailSubject = "❌ " + argv.appType + " | " + argv.testEnv.toUpperCase() + " | " + folder[0] + " | Error in sending mail";
+                    mailSubject = "❌ Error in sending mail";
                 else
-                    mailSubject = "❌ " + argv.appType + " | " + argv.testEnv.toUpperCase() + " | " + folder[0] + " | FAILED";
+                    mailSubject = "❌  | FAILED";
             }
         }
         console.log(mailSubject)
