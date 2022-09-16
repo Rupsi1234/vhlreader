@@ -2,13 +2,13 @@
 const nodemailer = require("nodemailer");
 const fs = require("fs");
 var argv = require('yargs').argv;
-var folder = fs.readdirSync('../../output/reports/');
-var envData = JSON.parse(fs.readFileSync('../../env.json'));
+//var folder = fs.readdirSync('../../output/reports/');
+//var envData = JSON.parse(fs.readFileSync('../../env.json'));
 var errorMailingList = 'rupsi.mehta@comprotechnologies.com';
 var semaphoreJob = 'https://semaphoreci.com/comprodlsengage/' + argv.projectName + '/branches/' + argv.branchName + '/builds/' + argv.buildNumber;
 
-var funcReportDir = '../../output/reports/' + folder[0];
-var visReportDir = funcReportDir + '/visual';
+//var funcReportDir = '../../output/reports/' + folder[0];
+//var visReportDir = funcReportDir + '/visual';
 var mailingList, mailOutput, mailSubject, appUrl, baseurl;
 
 async function main() {
@@ -28,10 +28,10 @@ async function main() {
             mailingList = errorMailingList;
         } else {
             var mailObj1, mailObj2, reportUrl, logData;
-            appUrl = envData[argv.appType].environments[argv.testEnv].url;
-            baseurl = envData[argv.appType].environments[argv.testEnv].reportDirRepo;
+            appUrl = "url";
+            //baseurl = envData[argv.appType].environments[argv.testEnv].reportDirRepo;
 
-            logData = updateLogDataObj(funcReportDir)
+            //logData = updateLogDataObj(funcReportDir)
 
             if (logData.skipAssertion != true) {
                 reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/index.html';
@@ -67,7 +67,7 @@ async function main() {
         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Error !!!!!!!!!!!!!!!!!!!!!!!!!!");
         console.log(err)
         mailOutput = err.toString();
-        mailSubject = "❌ " + argv.appType + " | " + argv.testEnv + " | " + folder[0] + " | Error in sending Mail";
+      //  mailSubject = "❌ " + argv.appType + " | " + argv.testEnv + " | " + folder[0] + " | Error in sending Mail";
         await sendMail(errorMailingList, mailSubject, mailOutput, 'text');
     }
 }
