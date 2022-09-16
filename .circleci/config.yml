@@ -32,7 +32,7 @@ jobs:
       - run:
           name: After Job - Send mail
           command: |
-            ./utils; node mailer.js --appType=$env:qa --testEnv=qa:TEST_ENV --projectName=qa:CIRCLE_PROJECT_REPONAME --branchName=qa:CIRCLE_BRANCH --buildNumber=qa:CIRCLE_BUILD_NUM --mailingList=qa:MAILINGLIST --emailId=qa:emailId --emailPwd=qa:emailPwd --jobResult=$env:CIRCLE_BUILD_URL --triggerSource=qa:triggerSource
+            ./utils; node mailer.js --appType=qa:qa --testEnv=qa:TEST_ENV --projectName=qa:CIRCLE_PROJECT_REPONAME --branchName=qa:CIRCLE_BRANCH --buildNumber=qa:CIRCLE_BUILD_NUM --mailingList=qa:MAILINGLIST --emailId=qa:emailId --emailPwd=qa:emailPwd --jobResult=$env:CIRCLE_BUILD_URL --triggerSource=qa:triggerSource
 
    
 workflows:
