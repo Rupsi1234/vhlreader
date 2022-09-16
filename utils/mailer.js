@@ -36,11 +36,11 @@ async function main() {
         
 
             if (mailObj2 == undefined) {
-                mailOutput = mailObj1.mailOutput + mailObj1.lastLine;
-                mailSubject = mailObj1.mailSubject;
+                mailOutput = "test Mail";
+                mailSubject = "mailSubject";
             } else if (mailObj1 == undefined) {
-                mailOutput = mailObj2.mailOutput + mailObj2.lastLine;
-                mailSubject = mailObj2.mailSubject;
+                mailOutput = "test Mail";
+                mailSubject = "mailSubject";
             } else {
                 mailOutput = mailObj1.mailOutput + '<!DOCTYPE html><html><body><br></body></html>' + mailObj2.mailOutput + mailObj1.lastLine;
                 if (mailObj1.status == "passed" && mailObj2.status == "passed")
