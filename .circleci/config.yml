@@ -30,6 +30,6 @@ workflows:
     jobs:
       - VHLReaderUI
       - email/send:
-                body: Configure this notification at https://www.cinotify.cc/
+                body: Started the circleCIJob
                 subject: CircleCI job started
-                to: rupsi.mehta@comprotechnologies.com
+                to: rupsi.mehta@comprotechnologies.com,mehta.rupsi@gmail.com
