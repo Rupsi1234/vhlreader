@@ -24,14 +24,7 @@ jobs:
       - run:
           name: Run VHLReaderUI
           command: npm test -- --env=qa --password=comprovhl1 --userName=ramanjit.singh@comprotechnologies.com
-      - run:
-          name: Install Packages of Mailer
-          command: npm install yargs fs nodemailer;
-      - run:
-          name: After Job - Send mail
-          command: |
-            node mailer.js -projectName=CIRCLE_PROJECT_REPONAME --mailingList=MAILINGLIST --emailId=engage.qa10@gmail.com --emailPwd=Compro@1234 --jobResult=CIRCLE_BUILD_URL --triggerSource=triggerSource
-   
+       
 workflows:
   VHLReaderUI:
     jobs:
