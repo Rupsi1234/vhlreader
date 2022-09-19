@@ -30,7 +30,7 @@ jobs:
       - run:
           name: After Job - Send mail
           command: |
-            node mailer.js -projectName=CIRCLE_PROJECT_REPONAME --mailingList=MAILINGLIST --emailId=$env:emailID --emailPwd=$env:emailPASS --jobResult=CIRCLE_BUILD_URL --triggerSource=triggerSource
+            node mailer.js -projectName=CIRCLE_PROJECT_REPONAME --mailingList=MAILINGLIST --emailId=engage.qa10@gmail.com --emailPwd=Compro@1234 --jobResult=CIRCLE_BUILD_URL --triggerSource=triggerSource
    
 workflows:
   VHLReaderUI:
