@@ -11,7 +11,6 @@ async function main() {
   let testAccount = await nodemailer.createTestAccount();
 console.log(argv.emailId)
 console.log(argv.emailPwd)
-console.log(emailId)
   // create reusable transporter object using the default SMTP transport
   let transporter = await nodemailer.createTransport({
     service: 'gmail',
