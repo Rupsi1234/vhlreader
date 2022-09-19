@@ -11,10 +11,11 @@ async function main() {
     host: "smtp.ethereal.email",
     port: 587,
     secure: false, // true for 465, false for other ports
+    service: 'gmail',
     auth: {
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
-    },
+        user: argv.emailId,
+        pass: argv.emailPwd
+    }
   });
 
   // send mail with defined transport object

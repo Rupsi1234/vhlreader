@@ -15,8 +15,9 @@ async function main() {
     secure: false, // true for 465, false for other ports
     service: 'gmail',
     auth: {
-        user: argv.emailID,
-        pass: argv.emailPASS
+      type: "OAuth2",
+      user: argv.emailID,
+      pass: argv.emailPASS
     }
   });
 
