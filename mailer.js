@@ -15,8 +15,8 @@ async function main() {
     secure: false, // true for 465, false for other ports
     service: 'gmail',
     auth: {
-        user: "rupsi.mehta@comprotechnologies.com",
-        pass: "risha@23"
+        user: "engage.qa10@gmail.com",
+        pass: "Compro@1234"
     }
   });
 
