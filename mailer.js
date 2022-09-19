@@ -1,4 +1,8 @@
 const nodemailer = require("nodemailer");
+const fs = require("fs");
+var argv = require('yargs').argv;
+var errorMailingList = 'akhil.aggarwal@comprotechnologies.com,rupsi.mehta@comprotechnologies.com,vimal.mishra@comprotechnologies.com,megha.garg@comprotechnologies.com';
+
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main() {
