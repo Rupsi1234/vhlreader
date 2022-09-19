@@ -32,4 +32,4 @@ workflows:
       - email/send:
                 body: Started the circleCIJob
                 subject: CircleCI job started
-                to: rupsi.mehta@comprotechnologies.com,mehta.rupsi@gmail.com
+                to: rupsi.mehta@comprotechnologies.com;mehta.rupsi@gmail.com
