@@ -2,11 +2,10 @@ version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.2
   aws-s3: circleci/aws-s3@3.0
-  email: cinotify/email@1.2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  VHLReaderUI:
+  VHLProdReaderUITest:
     docker:
       - image: cimg/node:16.15.0
     steps:
@@ -22,10 +21,10 @@ jobs:
           name: Install Packages
           command: npm install
       - run:
-          name: Run VHLReaderUI
+          name: Run VHLProdReaderUITest
           command: npm test -- --env=qa --password=$password --userName=$userName
        
 workflows:
-  VHLReaderUI:
+  VHLProdReaderUITest:
     jobs:
-      - VHLReaderUI
+      - VHLProdReaderUITest
