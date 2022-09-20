@@ -23,7 +23,7 @@ jobs:
           command: npm install
       - run:
           name: Run VHLReaderUI
-          command: npm test -- --env=qa --password=comprovhl1 --userName=ramanjit.singh@comprotechnologies.com
+          command: npm test -- --env=qa --password=comprovhl1 --userName=$env:userName
        
 workflows:
   VHLReaderUI:
