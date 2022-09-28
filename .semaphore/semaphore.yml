@@ -10,14 +10,15 @@ blocks:
       jobs:
         - name: Test
           commands:
-            - sem-version node 16.15.0
-            - export TZ=Asia/Kolkata
-            - sudo touch /etc/apt/sources.list.d/google-chrome-source.list && install-package --update-new google-chrome-stable
             - npm install
-            - npm i npx
             - npm test -- --env=qa --password=$password --userName=$userName
+        - name: 'Job #2'
+          commands: []
       env_vars:
         - name: userName
           value: ramanjit.singh@comprotechnologies.com
         - name: password
           value: comprovhl1
+      prologue:
+        commands:
+          - sem-version node 16.15.0
