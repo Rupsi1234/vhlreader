@@ -22,3 +22,4 @@ blocks:
       prologue:
         commands:
           - sem-version node 16.15.0
+          - checkout
