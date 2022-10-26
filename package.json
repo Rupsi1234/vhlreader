@@ -14,7 +14,7 @@
     "@wdio/cli": "^7.19.4",
     "@wdio/mocha-framework": "^7.19.3",
     "@wdio/spec-reporter": "^7.19.1",
-    "chromedriver": "^105.0.0",
+    "chromedriver": "106.0.1",
     "wdio-chromedriver-service": "7.2.8",
     "argv": "^0.0.2",
     "yargs": "^16.0.3",
