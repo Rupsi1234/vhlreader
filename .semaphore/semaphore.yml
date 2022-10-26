@@ -1,0 +1,25 @@
+version: v1.0
+name: Test MyApp
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Test
+    task:
+      jobs:
+        - name: Test
+          commands:
+            - checkout
+            - npm install
+            - npm test -- --env=qa --password=$password --userName=$userName
+        - name: 'Job #2'
+          commands: []
+      env_vars:
+        - name: userName
+          value: ramanjit.singh@comprotechnologies.com
+        - name: password
+          value: comprovhl1
+      prologue:
+        commands:
+          - sem-version node 16.15.0
